@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFDateHelper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -14,7 +19,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PeopleMon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Valet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>17893346AFF35D1E8C7EEF553D4F576F</key>
+		<key>48C3F096CAC1B73A0AA551C6D2F28212</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B1714E816AE794962516E2ECBB40A5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -33,6 +53,16 @@
 			<true/>
 		</dict>
 		<key>92C978222374EEBB941EDA9BC290B8C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>933E3A291047B77054220591A8DC8544</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9ADF74A92DB37BCA9991356E7AC5F6FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

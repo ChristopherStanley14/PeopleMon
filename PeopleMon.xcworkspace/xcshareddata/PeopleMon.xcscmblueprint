@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A88F27743F0BECB801BA9FBF160F60F2FBB87DAA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7D84603F45D07E73C79FE1F31D506310573E6757" : 9223372036854775807,
+    "A88F27743F0BECB801BA9FBF160F60F2FBB87DAA" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "75D46DE6-C79D-43E3-BF4C-55D0739F2B57",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7D84603F45D07E73C79FE1F31D506310573E6757" : "Swift\/EFAB\/",
+    "A88F27743F0BECB801BA9FBF160F60F2FBB87DAA" : "PeopleMon\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PeopleMon",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PeopleMon.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChristopherStanley14\/EFAB.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7D84603F45D07E73C79FE1F31D506310573E6757"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChristopherStanley14\/PeopleMon.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A88F27743F0BECB801BA9FBF160F60F2FBB87DAA"
+    }
+  ]
+}

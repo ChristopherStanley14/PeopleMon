@@ -8,24 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		479EEC1578448B1E571C8107 /* Pods_PeopleMon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D250D0EB5CE68C6DD1BFA42 /* Pods_PeopleMon.framework */; };
+		B99034241DD0D468007FF1C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034231DD0D468007FF1C4 /* User.swift */; };
+		B99034291DD0D549007FF1C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034261DD0D549007FF1C4 /* Constants.swift */; };
+		B990342A1DD0D549007FF1C4 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034271DD0D549007FF1C4 /* UserStore.swift */; };
+		B990342B1DD0D549007FF1C4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034281DD0D549007FF1C4 /* Utils.swift */; };
+		B99034301DD0D5B0007FF1C4 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990342D1DD0D5B0007FF1C4 /* NetworkModel.swift */; };
+		B99034311DD0D5B0007FF1C4 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990342E1DD0D5B0007FF1C4 /* WebServices.swift */; };
+		B99034321DD0D5B0007FF1C4 /* WebServicesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990342F1DD0D5B0007FF1C4 /* WebServicesExtension.swift */; };
 		B9DD2B941DD0CA7300CB7E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD2B931DD0CA7300CB7E24 /* AppDelegate.swift */; };
-		B9DD2B961DD0CA7300CB7E24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD2B951DD0CA7300CB7E24 /* ViewController.swift */; };
-		B9DD2B991DD0CA7300CB7E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DD2B971DD0CA7300CB7E24 /* Main.storyboard */; };
 		B9DD2B9B1DD0CA7300CB7E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DD2B9A1DD0CA7300CB7E24 /* Assets.xcassets */; };
 		B9DD2B9E1DD0CA7300CB7E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DD2B9C1DD0CA7300CB7E24 /* LaunchScreen.storyboard */; };
+		B9DD2BAB1DD0D0B200CB7E24 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DD2BAA1DD0D0B200CB7E24 /* Login.storyboard */; };
+		B9DD2BAF1DD0D0CB00CB7E24 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD2BAD1DD0D0CB00CB7E24 /* LoginViewController.swift */; };
+		B9DD2BB01DD0D0CB00CB7E24 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD2BAE1DD0D0CB00CB7E24 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D250D0EB5CE68C6DD1BFA42 /* Pods_PeopleMon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleMon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7187473AC54F5F7979B8D777 /* Pods-PeopleMon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon/Pods-PeopleMon.debug.xcconfig"; sourceTree = "<group>"; };
 		ACB90EBA3915B8F7F6B2C2C0 /* Pods-PeopleMon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleMon.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleMon/Pods-PeopleMon.release.xcconfig"; sourceTree = "<group>"; };
+		B99034231DD0D468007FF1C4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = SOURCE_ROOT; };
+		B99034261DD0D549007FF1C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Components/Constants.swift; sourceTree = SOURCE_ROOT; };
+		B99034271DD0D549007FF1C4 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Components/UserStore.swift; sourceTree = SOURCE_ROOT; };
+		B99034281DD0D549007FF1C4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Components/Utils.swift; sourceTree = SOURCE_ROOT; };
+		B990342D1DD0D5B0007FF1C4 /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = Networking/NetworkModel.swift; sourceTree = SOURCE_ROOT; };
+		B990342E1DD0D5B0007FF1C4 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServices.swift; path = Networking/WebServices.swift; sourceTree = SOURCE_ROOT; };
+		B990342F1DD0D5B0007FF1C4 /* WebServicesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExtension.swift; path = Networking/WebServicesExtension.swift; sourceTree = SOURCE_ROOT; };
 		B9DD2B901DD0CA7300CB7E24 /* PeopleMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DD2B931DD0CA7300CB7E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9DD2B951DD0CA7300CB7E24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B9DD2B981DD0CA7300CB7E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9DD2B9A1DD0CA7300CB7E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DD2B9D1DD0CA7300CB7E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9DD2B9F1DD0CA7300CB7E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9DD2BAA1DD0D0B200CB7E24 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = SOURCE_ROOT; };
+		B9DD2BAD1DD0D0CB00CB7E24 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B9DD2BAE1DD0D0CB00CB7E24 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "View Controllers/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +62,34 @@
 				2D250D0EB5CE68C6DD1BFA42 /* Pods_PeopleMon.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B99034201DD0D435007FF1C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B99034231DD0D468007FF1C4 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B99034251DD0D513007FF1C4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B99034261DD0D549007FF1C4 /* Constants.swift */,
+				B99034271DD0D549007FF1C4 /* UserStore.swift */,
+				B99034281DD0D549007FF1C4 /* Utils.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		B990342C1DD0D5A6007FF1C4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B990342D1DD0D5B0007FF1C4 /* NetworkModel.swift */,
+				B990342E1DD0D5B0007FF1C4 /* WebServices.swift */,
+				B990342F1DD0D5B0007FF1C4 /* WebServicesExtension.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		B9DD2B871DD0CA7200CB7E24 = {
@@ -69,14 +113,34 @@
 		B9DD2B921DD0CA7300CB7E24 /* PeopleMon */ = {
 			isa = PBXGroup;
 			children = (
+				B990342C1DD0D5A6007FF1C4 /* Networking */,
+				B99034251DD0D513007FF1C4 /* Components */,
+				B99034201DD0D435007FF1C4 /* Models */,
+				B9DD2BAC1DD0D0BA00CB7E24 /* View Controllers */,
+				B9DD2BA91DD0D06B00CB7E24 /* Storyboards */,
 				B9DD2B931DD0CA7300CB7E24 /* AppDelegate.swift */,
-				B9DD2B951DD0CA7300CB7E24 /* ViewController.swift */,
-				B9DD2B971DD0CA7300CB7E24 /* Main.storyboard */,
 				B9DD2B9A1DD0CA7300CB7E24 /* Assets.xcassets */,
 				B9DD2B9C1DD0CA7300CB7E24 /* LaunchScreen.storyboard */,
 				B9DD2B9F1DD0CA7300CB7E24 /* Info.plist */,
 			);
 			path = PeopleMon;
+			sourceTree = "<group>";
+		};
+		B9DD2BA91DD0D06B00CB7E24 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B9DD2BAA1DD0D0B200CB7E24 /* Login.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B9DD2BAC1DD0D0BA00CB7E24 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9DD2BAD1DD0D0CB00CB7E24 /* LoginViewController.swift */,
+				B9DD2BAE1DD0D0CB00CB7E24 /* RegisterViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		E3363D83875FA9AB06FF485D /* Pods */ = {
@@ -152,7 +216,7 @@
 			files = (
 				B9DD2B9E1DD0CA7300CB7E24 /* LaunchScreen.storyboard in Resources */,
 				B9DD2B9B1DD0CA7300CB7E24 /* Assets.xcassets in Resources */,
-				B9DD2B991DD0CA7300CB7E24 /* Main.storyboard in Resources */,
+				B9DD2BAB1DD0D0B200CB7E24 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +235,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		469E495D6E4321A50364F8C6 /* [CP] Copy Pods Resources */ = {
@@ -211,22 +275,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9DD2B961DD0CA7300CB7E24 /* ViewController.swift in Sources */,
+				B99034301DD0D5B0007FF1C4 /* NetworkModel.swift in Sources */,
+				B990342A1DD0D549007FF1C4 /* UserStore.swift in Sources */,
+				B99034291DD0D549007FF1C4 /* Constants.swift in Sources */,
+				B99034241DD0D468007FF1C4 /* User.swift in Sources */,
+				B990342B1DD0D549007FF1C4 /* Utils.swift in Sources */,
+				B9DD2BB01DD0D0CB00CB7E24 /* RegisterViewController.swift in Sources */,
+				B9DD2BAF1DD0D0CB00CB7E24 /* LoginViewController.swift in Sources */,
 				B9DD2B941DD0CA7300CB7E24 /* AppDelegate.swift in Sources */,
+				B99034321DD0D5B0007FF1C4 /* WebServicesExtension.swift in Sources */,
+				B99034311DD0D5B0007FF1C4 /* WebServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B9DD2B971DD0CA7300CB7E24 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9DD2B981DD0CA7300CB7E24 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B9DD2B9C1DD0CA7300CB7E24 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -374,6 +438,7 @@
 				B9DD2BA41DD0CA7300CB7E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
