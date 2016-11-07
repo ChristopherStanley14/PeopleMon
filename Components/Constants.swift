@@ -23,14 +23,14 @@ struct Constants {
     
     // Step 3: Create Test Model Constants
     // MARK: Test Model
-    struct Test {
-        static let userId = "userId"
-        static let id = "id"
-        static let title = "title"
-        static let body = "body"
-        
-       
-    }
+//    struct Test {
+//        static let userId = "userId"
+//        static let id = "id"
+//        static let title = "title"
+//        static let body = "body"
+//        
+//       
+//    }
     
     // Step 4: JSON Constants
     struct JSON {
@@ -38,47 +38,90 @@ struct Constants {
         static let processingError = "There was an error processing the response"
     }
     
-    // Step 9: BudgetUser Constants
-    struct BudgetUser {
+    
+    struct Account {
         static let id = "id"
         static let email = "email"
-        static let username = "username"
+        static let hasRegistered = "hasRegistered"
+        static let loginProver = "loginProver"
+        static let fullName = "fullName"
+        static let avatarBase64 = "avatarBase64"
+        static let lastCheckInLongitude = "lastCheckInLongitude"
+        static let lastCheckInLatitude = "lastCheckInLatitude"
+        static let lastCheckInDateTime = "lastCheckInDateTime"
+        static let oldPassword = "oldPassword"
+        static let newPassword = "newPassword"
+        static let confirmPassword = "confirmPassword"
         static let password = "password"
-        static let token = "token"
-        static let expirationDate = "expiration"
+        static let apiKey = "apiKey"
     }
     
-    // Step 10: Category Constants
-    struct Category {
-        static let id = "id"
-        static let name = "name"
-        static let categoryInfo = "category_info"
-        static let startDate = "start_date"
-        static let endDate = "end_date"
-        static let user = "user"
-        static let amount = "amount"
-        
-        static let month = "month"
-        static let day = "day"
-        static let year = "year"
+    struct User {
+        static let userId = "userId"
+        static let userName = "userName"
+        static let avatarBase64 = "avatarBase64"
+        static let longitude = "longitude"
+        static let latitude = "latitude"
+        static let created = "created"
+        static let caughtUserId = "caughtUserId"
+        static let radiusInMeters = "radiusInMeters"
+        static let conversationId = "conversationId"
+        static let recipientId = "recipientId"
+        static let recipientName = "recipientName"
+        static let lastMessage = "lastMessage"
+        static let messageCount = "messageCount"
+        static let senderId = "senderId"
+        static let senderName = "senderName"
+        static let recipientAvatarBase64 = "recipientAvatarBase64"
+        static let senderAvatarBase64 = "senderAvatarBase64"
     }
     
-    // Step 11: Expense Constants
-    struct Expense {
-        static let id = "id"
-        static let amount = "amount"
-        static let category = "category"
-        static let date = "date"
-        static let note = "note"
-        static let categoryId = "categoryId"
-        static let categoryName = "categoryName"
-        
-       
-        
-        // Step 19: Add month/year
-        static let month = "month"
-        static let year = "year"
+    struct Auth {
+        static let userName = "userName"
+        static let password = "password"
     }
+    
+//    // Step 9: BudgetUser Constants
+//    struct BudgetUser {
+//        static let id = "id"
+//        static let email = "email"
+//        static let username = "username"
+//        static let password = "password"
+//        static let token = "token"
+//        static let expirationDate = "expiration"
+//    }
+//    
+//    // Step 10: Category Constants
+//    struct Category {
+//        static let id = "id"
+//        static let name = "name"
+//        static let categoryInfo = "category_info"
+//        static let startDate = "start_date"
+//        static let endDate = "end_date"
+//        static let user = "user"
+//        static let amount = "amount"
+//        
+//        static let month = "month"
+//        static let day = "day"
+//        static let year = "year"
+//    }
+//    
+//    // Step 11: Expense Constants
+//    struct Expense {
+//        static let id = "id"
+//        static let amount = "amount"
+//        static let category = "category"
+//        static let date = "date"
+//        static let note = "note"
+//        static let categoryId = "categoryId"
+//        static let categoryName = "categoryName"
+//        
+//       
+//        
+//        // Step 19: Add month/year
+//        static let month = "month"
+//        static let year = "year"
+//    }
 }
 
 // MARK: - Colors
