@@ -14,23 +14,12 @@ struct Constants {
     static let monthDayYear = "MM/dd/yyyy"
     
     // Step 7: Add keychain strings
-    public static let keychainIdentifier = "EFABKeychain"
+    public static let keychainIdentifier = "PeoplemonKeychain"
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
+    public static let apiKey = "iOSandroid301november2016"
     
-    // Step 19: Add Notification constant
-    static let newExpensesFound = "NewExpensesFound"
-    
-    // Step 3: Create Test Model Constants
-    // MARK: Test Model
-//    struct Test {
-//        static let userId = "userId"
-//        static let id = "id"
-//        static let title = "title"
-//        static let body = "body"
-//        
-//       
-//    }
+
     
     // Step 4: JSON Constants
     struct JSON {
@@ -40,10 +29,12 @@ struct Constants {
     
     
     struct Account {
+        static let token = "token"
+        static let expiration = "expiration"
         static let id = "id"
         static let email = "email"
         static let hasRegistered = "hasRegistered"
-        static let loginProver = "loginProver"
+        static let loginProvider = "loginProvider"
         static let fullName = "fullName"
         static let avatarBase64 = "avatarBase64"
         static let lastCheckInLongitude = "lastCheckInLongitude"
@@ -54,6 +45,7 @@ struct Constants {
         static let confirmPassword = "confirmPassword"
         static let password = "password"
         static let apiKey = "apiKey"
+        static let grantType = "grant_type"
     }
     
     struct User {
@@ -62,7 +54,6 @@ struct Constants {
         static let avatarBase64 = "avatarBase64"
         static let longitude = "longitude"
         static let latitude = "latitude"
-        static let created = "created"
         static let caughtUserId = "caughtUserId"
         static let radiusInMeters = "radiusInMeters"
         static let conversationId = "conversationId"
@@ -81,10 +72,6 @@ struct Constants {
         static let message = "message"
     }
     
-    struct Auth {
-        static let userName = "userName"
-        static let password = "password"
-    }
     
 //    // Step 9: BudgetUser Constants
 //    struct BudgetUser {

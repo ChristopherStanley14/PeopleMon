@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func loginButton(_ sender: Any) {
-        guard let username = usernameTextField.text, username != "" else {
+        guard let email = usernameTextField.text, email != "" else {
             // show error
             let alert = Utils.createAlert("Login Error", message: "Please provide a username", dismissButtonTitle: "Close")
             present(alert, animated: true, completion: nil)
@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
         }
         
         MBProgressHUD.showAdded(to: view, animated: true)
-        let user = User(username: username, password: password)
+        let user = Account(email: email, password: password)
         UserStore.shared.login(user) { (success, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             

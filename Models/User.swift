@@ -32,23 +32,9 @@ class User : NetworkModel {
     var avatarBase64 : String?
     var longitude : Double?
     var latitude : Double?
-    var created : String?
-    var caughtUserId : String?
     var radiusInMeters : Int?
-    var conversationId : Int?
-    var recipientId : String?
-    var recipientName : String?
-    var lastMessage : String?
-    var messageCount : Int?
-    var senderId : String?
-    var senderName : String?
-    var recipientAvatarBase64 : String?
-    var senderAvatarBase64 : String?
-    var auth : String?
-    var pageSize : Int?
-    var pageNumber : Int?
-    var id : Int?
-    var message : String?
+    var caughtUserId : String?
+    
     
     // Request Type
     enum RequestType {
@@ -56,9 +42,6 @@ class User : NetworkModel {
         case checkIn
         case Catch
         case caught
-        case conversations
-        case getConversation
-        case postConversation
         
         
     }
@@ -75,28 +58,15 @@ class User : NetworkModel {
         avatarBase64 = try? json.getString(at: Constants.User.avatarBase64)
         longitude = try? json.getDouble(at: Constants.User.longitude)
         latitude = try? json.getDouble(at: Constants.User.latitude)
-        created = try? json.getString(at: Constants.User.created)
-        caughtUserId = try? json.getString(at: Constants.User.caughtUserId)
         radiusInMeters = try? json.getInt(at: Constants.User.radiusInMeters)
-        conversationId = try? json.getInt(at: Constants.User.conversationId)
-        recipientId = try? json.getString(at: Constants.User.recipientId)
-        recipientName = try? json.getString(at: Constants.User.recipientName)
-        lastMessage = try? json.getString(at: Constants.User.lastMessage)
-        messageCount = try? json.getInt(at: Constants.User.messageCount)
-        senderId = try? json.getString(at: Constants.User.senderId)
-        senderName = try? json.getString(at: Constants.User.senderName)
-        recipientAvatarBase64 = try? json.getString(at: Constants.User.recipientAvatarBase64)
-        senderAvatarBase64 = try? json.getString(at: Constants.User.senderAvatarBase64)
-        pageSize = try? json.getInt(at: Constants.User.pageSize)
-        pageNumber = try? json.getInt(at: Constants.User.pageNumber)
-        id = try? json.getInt(at: Constants.User.id)
-        message = try? json.getString(at: Constants.User.message)
-
+     
     }
     
-    init(radiusInMeters: Int, auth: String) {
-        self.radiusInMeters = radiusInMeters
-        self.auth = auth
+    init(userId: String, userName: String, longitude: Double, latitude: Double) {
+        self.userId = userId
+        self.userName = userName
+        self.longitude = longitude
+        self.latitude = latitude
         requestType = .nearby
     }
     
@@ -112,31 +82,13 @@ class User : NetworkModel {
         requestType = .Catch
     }
     
-    init(auth: String) {
-        self.auth = auth
+    init(userId: String, userName: String) {
+        self.userId = userId
+        self.userName = userName
         requestType = .caught
     }
     
-    init(pageSize: Int, pageNumber: Int, auth: String) {
-        self.pageSize = pageSize
-        self.pageNumber = pageNumber
-        self.auth = auth
-        requestType = .conversations
-    }
     
-    init(id: Int, pageSize: Int, pageNumber: Int, auth: String) {
-        self.id = id
-        self.pageSize = pageSize
-        self.pageNumber = pageNumber
-        self.auth = auth
-        requestType = .getConversation
-    }
-    
-    init(recipientId: String, message: String) {
-        self.recipientId = recipientId
-        self.message = message
-        requestType = .postConversation
-    }
     
     
     // Always return HTTP.GET
@@ -163,12 +115,6 @@ class User : NetworkModel {
             return "/v1/User/Catch"
         case .caught:
             return "/v1/User/Caught"
-        case .conversations:
-            return "/v1/User/Conversations"
-        case .getConversation:
-            return "/v1/User/Conversation"
-        case .postConversation:
-            return "/v1/User/Conversation"
         }
     }
     
