@@ -68,7 +68,6 @@ class Account : NetworkModel {
         loginProvider = try? json.getString(at: Constants.Account.loginProvider)
         email = try? json.getString(at: Constants.Account.email)
         avatarBase64 = try? json.getString(at: Constants.Account.avatarBase64)
-        apiKey = try? json.getString(at: Constants.Account.apiKey)
         password = try? json.getString(at: Constants.Account.password)
         lastCheckedInLatitude = try? json.getDouble(at: Constants.Account.lastCheckInLatitude)
         lastCheckedInLongitude = try? json.getDouble(at: Constants.Account.lastCheckInLongitude)

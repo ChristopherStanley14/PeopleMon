@@ -16,6 +16,9 @@
 		B99034311DD0D5B0007FF1C4 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990342E1DD0D5B0007FF1C4 /* WebServices.swift */; };
 		B99034321DD0D5B0007FF1C4 /* WebServicesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990342F1DD0D5B0007FF1C4 /* WebServicesExtension.swift */; };
 		B99034351DD250AD007FF1C4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034341DD250AD007FF1C4 /* Account.swift */; };
+		B99034391DD26A4A007FF1C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99034381DD26A4A007FF1C4 /* Main.storyboard */; };
+		B990343B1DD271EA007FF1C4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B990343A1DD271EA007FF1C4 /* MapViewController.swift */; };
+		B990343D1DD2797E007FF1C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B990343C1DD2797E007FF1C4 /* MapKit.framework */; };
 		B9DD2B941DD0CA7300CB7E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD2B931DD0CA7300CB7E24 /* AppDelegate.swift */; };
 		B9DD2B9B1DD0CA7300CB7E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DD2B9A1DD0CA7300CB7E24 /* Assets.xcassets */; };
 		B9DD2B9E1DD0CA7300CB7E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DD2B9C1DD0CA7300CB7E24 /* LaunchScreen.storyboard */; };
@@ -37,6 +40,9 @@
 		B990342F1DD0D5B0007FF1C4 /* WebServicesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExtension.swift; path = Networking/WebServicesExtension.swift; sourceTree = SOURCE_ROOT; };
 		B99034331DD21615007FF1C4 /* PeopleMon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleMon.entitlements; sourceTree = "<group>"; };
 		B99034341DD250AD007FF1C4 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = Models/Account.swift; sourceTree = SOURCE_ROOT; };
+		B99034381DD26A4A007FF1C4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		B990343A1DD271EA007FF1C4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B990343C1DD2797E007FF1C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9DD2B901DD0CA7300CB7E24 /* PeopleMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DD2B931DD0CA7300CB7E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DD2B9A1DD0CA7300CB7E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B990343D1DD2797E007FF1C4 /* MapKit.framework in Frameworks */,
 				479EEC1578448B1E571C8107 /* Pods_PeopleMon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +69,7 @@
 		76736D7B8BDD0D7A92EE0723 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B990343C1DD2797E007FF1C4 /* MapKit.framework */,
 				2D250D0EB5CE68C6DD1BFA42 /* Pods_PeopleMon.framework */,
 			);
 			name = Frameworks;
@@ -135,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B9DD2BAA1DD0D0B200CB7E24 /* Login.storyboard */,
+				B99034381DD26A4A007FF1C4 /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -144,6 +153,7 @@
 			children = (
 				B9DD2BAD1DD0D0CB00CB7E24 /* LoginViewController.swift */,
 				B9DD2BAE1DD0D0CB00CB7E24 /* RegisterViewController.swift */,
+				B990343A1DD271EA007FF1C4 /* MapViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -198,6 +208,9 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -228,6 +241,7 @@
 				B9DD2B9E1DD0CA7300CB7E24 /* LaunchScreen.storyboard in Resources */,
 				B9DD2B9B1DD0CA7300CB7E24 /* Assets.xcassets in Resources */,
 				B9DD2BAB1DD0D0B200CB7E24 /* Login.storyboard in Resources */,
+				B99034391DD26A4A007FF1C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +307,7 @@
 				B99034241DD0D468007FF1C4 /* User.swift in Sources */,
 				B990342B1DD0D549007FF1C4 /* Utils.swift in Sources */,
 				B9DD2BB01DD0D0CB00CB7E24 /* RegisterViewController.swift in Sources */,
+				B990343B1DD271EA007FF1C4 /* MapViewController.swift in Sources */,
 				B9DD2BAF1DD0D0CB00CB7E24 /* LoginViewController.swift in Sources */,
 				B9DD2B941DD0CA7300CB7E24 /* AppDelegate.swift in Sources */,
 				B99034321DD0D5B0007FF1C4 /* WebServicesExtension.swift in Sources */,
