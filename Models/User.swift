@@ -27,19 +27,42 @@ class User : NetworkModel {
      "expiration": "2016-11-01T20:58:52.318Z"
      */
     
+    var userId : String?
+    var userName : String?
+    var avatarBase64 : String?
+    var longitude : Double?
+    var latitude : Double?
+    var created : String?
+    var caughtUserId : String?
+    var radiusInMeters : Int?
+    var conversationId : Int?
+    var recipientId : String?
+    var recipientName : String?
+    var lastMessage : String?
+    var messageCount : Int?
+    var senderId : String?
+    var senderName : String?
+    var recipientAvatarBase64 : String?
+    var senderAvatarBase64 : String?
+    var auth : String?
+    var pageSize : Int?
+    var pageNumber : Int?
     var id : Int?
-    var username : String?
-    var password : String?
-    var email : String?
-    var token : String?
-    var expiration : String?
+    var message : String?
     
     // Request Type
     enum RequestType {
-        case login
-        case register
+        case nearby
+        case checkIn
+        case Catch
+        case caught
+        case conversations
+        case getConversation
+        case postConversation
+        
+        
     }
-    var requestType = RequestType.login
+    var requestType = RequestType.nearby
     
     
     // empty constructor
@@ -47,39 +70,105 @@ class User : NetworkModel {
     
     // create an object from JSON
     required init(json: JSON) throws {
-        token = try? json.getString(at: Constants.BudgetUser.token)
-        expiration = try? json.getString(at: Constants.BudgetUser.expirationDate)
+        userId = try? json.getString(at: Constants.User.userId)
+        userName = try? json.getString(at: Constants.User.userName)
+        avatarBase64 = try? json.getString(at: Constants.User.avatarBase64)
+        longitude = try? json.getDouble(at: Constants.User.longitude)
+        latitude = try? json.getDouble(at: Constants.User.latitude)
+        created = try? json.getString(at: Constants.User.created)
+        caughtUserId = try? json.getString(at: Constants.User.caughtUserId)
+        radiusInMeters = try? json.getInt(at: Constants.User.radiusInMeters)
+        conversationId = try? json.getInt(at: Constants.User.conversationId)
+        recipientId = try? json.getString(at: Constants.User.recipientId)
+        recipientName = try? json.getString(at: Constants.User.recipientName)
+        lastMessage = try? json.getString(at: Constants.User.lastMessage)
+        messageCount = try? json.getInt(at: Constants.User.messageCount)
+        senderId = try? json.getString(at: Constants.User.senderId)
+        senderName = try? json.getString(at: Constants.User.senderName)
+        recipientAvatarBase64 = try? json.getString(at: Constants.User.recipientAvatarBase64)
+        senderAvatarBase64 = try? json.getString(at: Constants.User.senderAvatarBase64)
+        pageSize = try? json.getInt(at: Constants.User.pageSize)
+        pageNumber = try? json.getInt(at: Constants.User.pageNumber)
+        id = try? json.getInt(at: Constants.User.id)
+        message = try? json.getString(at: Constants.User.message)
+
     }
     
-    init(username: String, password: String) {
-        self.username = username
-        self.password = password
-        requestType = .login
+    init(radiusInMeters: Int, auth: String) {
+        self.radiusInMeters = radiusInMeters
+        self.auth = auth
+        requestType = .nearby
     }
     
-    init(username: String, password: String, email: String) {
-        self.username = username
-        self.password = password
-        self.email = email
-        requestType = .register
+    init(longitude: Double, latitude: Double) {
+        self.longitude = longitude
+        self.latitude = latitude
+        requestType = .checkIn
     }
     
-    init(id: Int) {
+    init(caughtUserId: String, radiusInMeters: Int) {
+        self.caughtUserId = caughtUserId
+        self.radiusInMeters = radiusInMeters
+        requestType = .Catch
+    }
+    
+    init(auth: String) {
+        self.auth = auth
+        requestType = .caught
+    }
+    
+    init(pageSize: Int, pageNumber: Int, auth: String) {
+        self.pageSize = pageSize
+        self.pageNumber = pageNumber
+        self.auth = auth
+        requestType = .conversations
+    }
+    
+    init(id: Int, pageSize: Int, pageNumber: Int, auth: String) {
         self.id = id
+        self.pageSize = pageSize
+        self.pageNumber = pageNumber
+        self.auth = auth
+        requestType = .getConversation
     }
+    
+    init(recipientId: String, message: String) {
+        self.recipientId = recipientId
+        self.message = message
+        requestType = .postConversation
+    }
+    
     
     // Always return HTTP.GET
     func method() -> Alamofire.HTTPMethod {
-        return .post
+        switch requestType {
+        case .checkIn:
+            return .post
+        case .Catch:
+            return .post
+        // Step 17: add default
+        default:
+            return .get
+        }
     }
     
     // A sample path to a single post
     func path() -> String {
         switch requestType {
-        case .login:
-            return "/auth"
-        case .register:
-            return "/register"
+        case .nearby:
+            return "/v1/User/Nearby"
+        case .checkIn:
+            return "/v1/User/CheckIn"
+        case .Catch:
+            return "/v1/User/Catch"
+        case .caught:
+            return "/v1/User/Caught"
+        case .conversations:
+            return "/v1/User/Conversations"
+        case .getConversation:
+            return "/v1/User/Conversation"
+        case .postConversation:
+            return "/v1/User/Conversation"
         }
     }
     
@@ -87,13 +176,14 @@ class User : NetworkModel {
     func toDictionary() -> [String: AnyObject]? {
         
         var params: [String: AnyObject] = [:]
-        params[Constants.BudgetUser.username] = username as AnyObject?
-        params[Constants.BudgetUser.password] = password as AnyObject?
-        
         
         switch requestType {
-        case .register:
-            params[Constants.BudgetUser.email] = email as AnyObject?
+        case .checkIn:
+            params[Constants.User.longitude] = longitude as AnyObject?
+            params[Constants.User.latitude] = latitude as AnyObject?
+        case .Catch:
+            params[Constants.User.caughtUserId] = caughtUserId as AnyObject?
+            params[Constants.User.radiusInMeters] = radiusInMeters as AnyObject?
         default:
             break
         }

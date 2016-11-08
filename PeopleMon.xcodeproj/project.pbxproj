@@ -34,6 +34,7 @@
 		B990342D1DD0D5B0007FF1C4 /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = Networking/NetworkModel.swift; sourceTree = SOURCE_ROOT; };
 		B990342E1DD0D5B0007FF1C4 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServices.swift; path = Networking/WebServices.swift; sourceTree = SOURCE_ROOT; };
 		B990342F1DD0D5B0007FF1C4 /* WebServicesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExtension.swift; path = Networking/WebServicesExtension.swift; sourceTree = SOURCE_ROOT; };
+		B99034331DD21615007FF1C4 /* PeopleMon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleMon.entitlements; sourceTree = "<group>"; };
 		B9DD2B901DD0CA7300CB7E24 /* PeopleMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DD2B931DD0CA7300CB7E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DD2B9A1DD0CA7300CB7E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		B9DD2B921DD0CA7300CB7E24 /* PeopleMon */ = {
 			isa = PBXGroup;
 			children = (
+				B99034331DD21615007FF1C4 /* PeopleMon.entitlements */,
 				B990342C1DD0D5A6007FF1C4 /* Networking */,
 				B99034251DD0D513007FF1C4 /* Components */,
 				B99034201DD0D435007FF1C4 /* Models */,
@@ -187,7 +189,13 @@
 				TargetAttributes = {
 					B9DD2B8F1DD0CA7200CB7E24 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = VGACHSH4G9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -398,6 +406,8 @@
 			baseConfigurationReference = 7187473AC54F5F7979B8D777 /* Pods-PeopleMon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PeopleMon/PeopleMon.entitlements;
+				DEVELOPMENT_TEAM = VGACHSH4G9;
 				INFOPLIST_FILE = PeopleMon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interapt.PeopleMon;
@@ -411,6 +421,8 @@
 			baseConfigurationReference = ACB90EBA3915B8F7F6B2C2C0 /* Pods-PeopleMon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PeopleMon/PeopleMon.entitlements;
+				DEVELOPMENT_TEAM = VGACHSH4G9;
 				INFOPLIST_FILE = PeopleMon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interapt.PeopleMon;

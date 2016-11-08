@@ -74,6 +74,11 @@ struct Constants {
         static let senderName = "senderName"
         static let recipientAvatarBase64 = "recipientAvatarBase64"
         static let senderAvatarBase64 = "senderAvatarBase64"
+        static let auth = "auth"
+        static let pageSize = "pageSize"
+        static let pageNumber = "pageNumber"
+        static let id = "id"
+        static let message = "message"
     }
     
     struct Auth {
