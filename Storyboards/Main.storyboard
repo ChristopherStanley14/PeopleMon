@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,21 +22,130 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a1s-Wy-VOe">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1s-Wy-VOe">
                                 <rect key="frame" x="0.0" y="72" width="375" height="587"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="g7n-WL-lqb"/>
+                    <navigationItem key="navigationItem" id="g7n-WL-lqb">
+                        <nil key="title"/>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="BpX-Ti-JRM">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="90f-NK-1to">
+                                    <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Profile"/>
+                                    <connections>
+                                        <segue destination="E2w-Ef-EPN" kind="showDetail" id="3wx-da-MCu"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="jwA-6T-T23">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Rwo-Zw-236">
+                                    <rect key="frame" x="210" y="7" width="58" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Caught"/>
+                                    <connections>
+                                        <segue destination="9Sk-Bg-k5q" kind="showDetail" id="pd2-Ru-v4T"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="a1s-Wy-VOe" id="t38-Gh-Wfq"/>
                         <segue destination="Uon-bk-9lO" kind="presentation" identifier="PresentLoginNoAnimation" id="iqr-OU-rTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wp-kM-HCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="130.88455772113943"/>
+            <point key="canvasLocation" x="725.60000000000002" y="130.88455772113943"/>
+        </scene>
+        <!--Caught-->
+        <scene sceneID="cV3-rZ-iJ6">
+            <objects>
+                <tableViewController id="mi8-9l-UbK" customClass="CaughtTableViewController" customModule="PeopleMon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="N1m-2A-yY5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3yu-1c-nFj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yu-1c-nFj" id="Ha7-AJ-Kix">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mi8-9l-UbK" id="Oit-vn-39a"/>
+                            <outlet property="delegate" destination="mi8-9l-UbK" id="wgE-On-ZJA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Caught" id="8Ip-fj-dQM">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ls2-5T-mha">
+                            <connections>
+                                <action selector="back:" destination="mi8-9l-UbK" id="apc-lQ-MeK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4T2-QA-g4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="-572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PGS-Wp-Zi2">
+            <objects>
+                <navigationController id="9Sk-Bg-k5q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T13-YK-eSu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mi8-9l-UbK" kind="relationship" relationship="rootViewController" id="gUV-Bc-vzp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7Z-sq-68G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="726" y="-571"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="1js-49-GbG">
+            <objects>
+                <viewController id="E2w-Ef-EPN" customClass="UserProfileViewController" customModule="PeopleMon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2GT-Ue-ZJp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gk8-vQ-bDG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ypU-AY-eU1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMj-MZ-CYb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Profile" id="CPp-f0-tSX">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="cGc-jc-63x">
+                                            <connections>
+                                                <action selector="back:" destination="E2w-Ef-EPN" id="a6s-sn-oXY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t2-aU-BNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="131"/>
         </scene>
         <!--Login-->
         <scene sceneID="rt6-MI-BrK">
@@ -61,7 +171,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tq5-Ry-q18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.19999999999999" y="130.88455772113943"/>
+            <point key="canvasLocation" x="18" y="131"/>
         </scene>
     </scenes>
 </document>
