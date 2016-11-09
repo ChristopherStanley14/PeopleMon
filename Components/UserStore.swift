@@ -8,19 +8,29 @@
 
 import Foundation
 
+protocol UserStoreDelegate: class {
+    func userLoggedIn()
+}
+
 class UserStore {
     // singleton
     static let shared = UserStore()
     private init() {}
     
-    func login(_ loginUser: Account, completion:@escaping
-        (_ success:Bool, _ error: String?) -> Void) {
-        
-        // Call web service to login
-        WebServices.shared.authUser(loginUser) { (user, error) in
+    var user: Account? {
+        didSet {
+            if let _ = user {
+                delegate?.userLoggedIn()
+            }
+        }
+    }
+    weak var delegate: UserStoreDelegate?
+    
+    func login(_ loginUser: Account, completion:@escaping (_ success: Bool, _ error: String?) -> Void) {
+        WebServices.shared.authUser(loginUser) { (user, error) -> () in
             if let user = user {
                 WebServices.shared.setAuthToken(user.token, expiration: user.expiration)
-                completion(true, nil)
+                self.getUserInfo(infoUser: loginUser, completion: completion)
             } else {
                 completion(false, error)
             }
@@ -41,19 +51,17 @@ class UserStore {
     }
     
     
-//    func register(_ registerUser: Account, completion:@escaping
-//        (_ success:Bool, _ error: String?) -> Void) {
-//        
-//        // Call web service to login
-//        WebServices.shared.authUser(registerUser) { (user, error) in
-//            if let user = user {
-//                WebServices.shared.setAuthToken(user.token, expiration: user.expiration)
-//                completion(true, nil)
-//            } else {
-//                completion(false, error)
-//            }
-//        }
-//    }
+    func getUserInfo(infoUser: Account, completion:@escaping (_ success: Bool, _ error: String?) -> Void) {
+        infoUser.requestType = Account.RequestType.userInfo
+        WebServices.shared.getObject(infoUser) { (user, error) in
+            if let user = user {
+                self.user = user
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
     
     func logout(_ completion:() -> ()) {
         WebServices.shared.clearUserAuthToken()

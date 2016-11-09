@@ -49,8 +49,6 @@ class Account : NetworkModel {
         case logOut
         case userInfo
         case updateUserInfo
-        
-        
     }
    
     var requestType = RequestType.logIn

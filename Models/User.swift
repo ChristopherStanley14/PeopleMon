@@ -19,13 +19,7 @@ import Freddy
 
 // Just a test object to excercise the network stack
 class User : NetworkModel {
-    /*
-     "username": "string",
-     "password": "string",
-     "email": "string"
-     "token": "string",
-     "expiration": "2016-11-01T20:58:52.318Z"
-     */
+    
     
     var userId : String?
     var userName : String?
