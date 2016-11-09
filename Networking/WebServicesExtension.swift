@@ -1,22 +1,14 @@
-//
-//  WebServicesExtension.swift
-//  EFAB
-//
-//  Created by Christopher Stanley on 11/1/16.
-//  Copyright © 2016 Christopher Stanley. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import Freddy
-
 extension WebServices {
-    // Step 5: Create generic function to get single model back
     func getObject<T: NetworkModel>(_ model: T, completion: @escaping (_ object: T?, _ error: String?) -> Void) {
         request(AuthRouter.restRequest(model)).responseJSON { (response) in
             WebServices.parseResponseObject(response: response, completion: completion)
         }
     }
+    
+   
     
     // Step 6: Create generic functions for creating an object as well as getting back an array of objects
     func postObject<T: NetworkModel>(_ model: T, completion: @escaping (_ object: T?, _ error: String?) -> Void) {
@@ -33,7 +25,6 @@ extension WebServices {
     
     
     // MARK: - Response parsing functions
-    // Step 5: Create generic function to process singular object
     class func parseResponseObject<T: NetworkModel>(response: DataResponse<Any>, completion: (_ object: T?, _ error: String?) -> Void) {
         var object: T?
         
@@ -54,6 +45,26 @@ extension WebServices {
         } catch {
             completion(nil, Constants.JSON.processingError)
         }
+    }
+    
+    class func parseResponseObjects<T: NetworkModel>(response: DataResponse<Any>, completion: (_ objects: [T]?, _ error: String?) -> Void) {
+        var errorString: String?
+        var objects: [T]?
+        
+        guard case .success(_) = response.result, let data = response.data else {
+            completion(nil, parseError(response: response))
+            return
+        }
+        
+        do {
+            let json = try JSON(data: data)
+            let theObjects = try json.getArray().map(T.init)
+            objects = theObjects
+        } catch {
+            errorString = Constants.JSON.processingError
+        }
+        
+        completion(objects, errorString)
     }
     
     class func parseError(response: DataResponse<Any>) -> String? {
@@ -95,27 +106,7 @@ extension WebServices {
     }
     
     
-    // Step 6: Create generic function to process array of objects
-    class func parseResponseObjects<T: NetworkModel>(response: DataResponse<Any>, completion: (_ objects: [T]?, _ error: String?) -> Void) {
-        var errorString: String?
-        var objects: [T]?
-        
-        guard case .success(_) = response.result, let data = response.data else {
-            completion(nil, parseError(response: response))
-            return
-        }
-        
-        do {
-            let json = try JSON(data: data)
-            let people = try json.getArray().map(T.init)
-            objects = people
-        } catch {
-            errorString = Constants.JSON.processingError
-        }
-        
-        completion(objects, errorString)
-    }
-    
+    // Step 9: Auth and Register Functions
     func authUser<T: NetworkModel>(_ user: T, completion:@escaping (_ user: T?, _ error: String?) -> ()) {
         request(WebServices.shared.baseURL + user.path(), method: user.method(), parameters: user.toDictionary(), encoding: URLEncoding.default)
             .responseJSON { (response) in

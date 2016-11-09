@@ -5,7 +5,6 @@
 //  Created by Christopher Stanley on 11/2/16.
 //  Copyright © 2016 Christopher Stanley. All rights reserved.
 //
-
 import Foundation
 
 protocol UserStoreDelegate: class {
@@ -68,5 +67,5 @@ class UserStore {
         completion()
     }
     
-   
+    
 }

@@ -17,28 +17,22 @@ import Foundation
 import Alamofire
 import Freddy
 
-// Just a test object to excercise the network stack
+
 class Account : NetworkModel {
-    /*
-     "username": "string",
-     "password": "string",
-     "email": "string"
-     "token": "string",
-     "expiration": "2016-11-01T20:58:52.318Z"
-     */
     
-    var id : String?
-    var token : String?
-    var expiration : String?
-    var hasRegistered : Bool?
-    var loginProvider : String?
-    var email : String?
-    var fullName : String?
-    var avatarBase64 : String?
-    var apiKey : String?
-    var password : String?
-    var lastCheckedInLongitude : Double?
-    var lastCheckedInLatitude : Double?
+    
+    var id: String?
+    var token: String?
+    var expiration: String?
+    var hasRegistered: Bool?
+    var loginProvider: String?
+    var email: String?
+    var fullName: String?
+    var avatarBase64: String?
+    var apiKey: String?
+    var password: String?
+    var lastCheckedInLongitude: Double?
+    var lastCheckedInLatitude: Double?
     
     
     
@@ -51,7 +45,7 @@ class Account : NetworkModel {
         case updateUserInfo
     }
    
-    var requestType = RequestType.logIn
+    var requestType: RequestType = .logIn
     
     
     // empty constructor
@@ -67,11 +61,19 @@ class Account : NetworkModel {
         hasRegistered = try? json.getBool(at: Constants.Account.hasRegistered)
         loginProvider = try? json.getString(at: Constants.Account.loginProvider)
         email = try? json.getString(at: Constants.Account.email)
+        password = try? json.getString(at: Constants.Account.password)
         avatarBase64 = try? json.getString(at: Constants.Account.avatarBase64)
         lastCheckedInLatitude = try? json.getDouble(at: Constants.Account.lastCheckInLatitude)
         lastCheckedInLongitude = try? json.getDouble(at: Constants.Account.lastCheckInLongitude)
         fullName = try? json.getString(at: Constants.Account.fullName)
 
+    }
+    
+   
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+        requestType = .logIn
     }
     
     init(email: String, password: String, fullName: String) {
@@ -82,11 +84,6 @@ class Account : NetworkModel {
         requestType = .register
     }
     
-    init(email: String, password: String) {
-        self.email = email
-        self.password = password
-        requestType = .logIn
-    }
     
     init(fullName: String, avatarBase64: String) {
         self.fullName = fullName
@@ -129,13 +126,14 @@ class Account : NetworkModel {
         switch requestType {
         case .register:
             params[Constants.Account.email] = email as AnyObject?
-            params[Constants.Account.password] = password as AnyObject?
             params[Constants.Account.fullName] = fullName as AnyObject?
             params[Constants.Account.apiKey] = self.apiKey as AnyObject?
-        case .logIn:
-            params[Constants.Account.email] = email as AnyObject?
             params[Constants.Account.password] = password as AnyObject?
+        case .logIn:
             params[Constants.Account.grantType] = Constants.Account.password as AnyObject?
+            params[Constants.Account.userName] = email as AnyObject?
+            params[Constants.Account.password] = password as AnyObject?
+            
         case .updateUserInfo:
             params[Constants.Account.fullName] = fullName as AnyObject?
             params[Constants.Account.avatarBase64] = avatarBase64 as AnyObject?

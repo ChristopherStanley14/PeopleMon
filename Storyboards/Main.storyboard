@@ -37,24 +37,6 @@
             </objects>
             <point key="canvasLocation" x="764" y="130.88455772113943"/>
         </scene>
-        <!--User Profile View Controller-->
-        <scene sceneID="r5f-lq-Fuk">
-            <objects>
-                <viewController id="ocD-7h-6Eg" customClass="UserProfileViewController" customModule="PeopleMon" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="40Q-i8-Jog"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hjf-Lm-pnY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aK0-rV-ol9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PP4-5j-xMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1644" y="131"/>
-        </scene>
         <!--Login-->
         <scene sceneID="rt6-MI-BrK">
             <objects>
