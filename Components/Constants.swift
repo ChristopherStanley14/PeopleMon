@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 struct Constants {
-    // Step 16: Add monthDayYear
-    static let monthDayYear = "MM/dd/yyyy"
     
     // Step 7: Add keychain strings
     public static let keychainIdentifier = "PeoplemonKeychain"

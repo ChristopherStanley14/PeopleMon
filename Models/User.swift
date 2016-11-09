@@ -34,6 +34,7 @@ class User : NetworkModel {
     var latitude : Double?
     var radiusInMeters : Int?
     var caughtUserId : String?
+    var created : String?
     
     
     // Request Type
@@ -53,40 +54,32 @@ class User : NetworkModel {
     
     // create an object from JSON
     required init(json: JSON) throws {
-        userId = try? json.getString(at: Constants.User.userId)
-        userName = try? json.getString(at: Constants.User.userName)
-        avatarBase64 = try? json.getString(at: Constants.User.avatarBase64)
-        longitude = try? json.getDouble(at: Constants.User.longitude)
-        latitude = try? json.getDouble(at: Constants.User.latitude)
-        radiusInMeters = try? json.getInt(at: Constants.User.radiusInMeters)
+        self.userId = try? json.getString(at: Constants.User.userId)
+        self.userName = try? json.getString(at: Constants.User.userName)
+        self.avatarBase64 = try? json.getString(at: Constants.User.avatarBase64)
+        self.longitude = try? json.getDouble(at: Constants.User.longitude)
+        self.latitude = try? json.getDouble(at: Constants.User.latitude)
+        self.created = try? json.getString(at: Constants.User.created)
      
     }
     
-    init(userId: String, userName: String, longitude: Double, latitude: Double) {
-        self.userId = userId
-        self.userName = userName
-        self.longitude = longitude
-        self.latitude = latitude
-        requestType = .nearby
+    init(radiusInMeters: Int) {
+        self.radiusInMeters = radiusInMeters
+        self.requestType = .nearby
     }
     
     init(longitude: Double, latitude: Double) {
         self.longitude = longitude
         self.latitude = latitude
-        requestType = .checkIn
+        self.requestType = .checkIn
     }
     
     init(caughtUserId: String, radiusInMeters: Int) {
         self.caughtUserId = caughtUserId
         self.radiusInMeters = radiusInMeters
-        requestType = .Catch
     }
     
-    init(userId: String, userName: String) {
-        self.userId = userId
-        self.userName = userName
-        requestType = .caught
-    }
+   
     
     
     
@@ -124,6 +117,8 @@ class User : NetworkModel {
         var params: [String: AnyObject] = [:]
         
         switch requestType {
+        case .nearby:
+            params[Constants.User.radiusInMeters] = radiusInMeters as AnyObject?
         case .checkIn:
             params[Constants.User.longitude] = longitude as AnyObject?
             params[Constants.User.latitude] = latitude as AnyObject?

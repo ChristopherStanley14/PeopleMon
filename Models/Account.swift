@@ -53,11 +53,13 @@ class Account : NetworkModel {
         
     }
    
-    var requestType = RequestType.register
+    var requestType = RequestType.logIn
     
     
     // empty constructor
-    required init() {}
+    required init() {
+        requestType = .userInfo
+    }
     
     // create an object from JSON
     required init(json: JSON) throws {
@@ -68,7 +70,6 @@ class Account : NetworkModel {
         loginProvider = try? json.getString(at: Constants.Account.loginProvider)
         email = try? json.getString(at: Constants.Account.email)
         avatarBase64 = try? json.getString(at: Constants.Account.avatarBase64)
-        password = try? json.getString(at: Constants.Account.password)
         lastCheckedInLatitude = try? json.getDouble(at: Constants.Account.lastCheckInLatitude)
         lastCheckedInLongitude = try? json.getDouble(at: Constants.Account.lastCheckInLongitude)
         fullName = try? json.getString(at: Constants.Account.fullName)
@@ -101,10 +102,10 @@ class Account : NetworkModel {
     func method() -> Alamofire.HTTPMethod {
         switch requestType {
         case .updateUserInfo:
-            return .post
+            return .get
         // Step 17: add default
         default:
-            return .get
+            return .post
         }
     }
     
@@ -132,7 +133,7 @@ class Account : NetworkModel {
             params[Constants.Account.email] = email as AnyObject?
             params[Constants.Account.password] = password as AnyObject?
             params[Constants.Account.fullName] = fullName as AnyObject?
-            params[Constants.Account.apiKey] = apiKey as AnyObject?
+            params[Constants.Account.apiKey] = self.apiKey as AnyObject?
         case .logIn:
             params[Constants.Account.email] = email as AnyObject?
             params[Constants.Account.password] = password as AnyObject?
