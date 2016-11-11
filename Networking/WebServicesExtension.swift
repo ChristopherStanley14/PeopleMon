@@ -1,6 +1,7 @@
 import Foundation
 import Alamofire
 import Freddy
+
 extension WebServices {
     func getObject<T: NetworkModel>(_ model: T, completion: @escaping (_ object: T?, _ error: String?) -> Void) {
         request(AuthRouter.restRequest(model)).responseJSON { (response) in
@@ -8,14 +9,19 @@ extension WebServices {
         }
     }
     
-   
-    
     // Step 6: Create generic functions for creating an object as well as getting back an array of objects
     func postObject<T: NetworkModel>(_ model: T, completion: @escaping (_ object: T?, _ error: String?) -> Void) {
+        print("\(model.toDictionary())")
         request(AuthRouter.restRequest(model)).responseJSON { (response) in
+            print("\(response.response?.statusCode)")
+            if let data = response.data, let dataString = String(data: data, encoding: .utf8) {
+                print("response: \(dataString)")
+            }
             WebServices.parseResponseObject(response: response, completion: completion)
         }
     }
+    
+    
     
     func getObjects<T: NetworkModel>(_ model: T, completion: @escaping (_ objects: [T]?, _ error: String?) -> Void) {
         request(AuthRouter.restRequest(model)).responseJSON { (response) in

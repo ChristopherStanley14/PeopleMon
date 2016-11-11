@@ -16,6 +16,7 @@
 import Foundation
 import Alamofire
 import Freddy
+import MapKit
 
 // Just a test object to excercise the network stack
 class User : NetworkModel {
@@ -62,15 +63,16 @@ class User : NetworkModel {
         self.requestType = .nearby
     }
     
-    init(longitude: Double, latitude: Double) {
-        self.longitude = longitude
-        self.latitude = latitude
+    init(coordinate: CLLocationCoordinate2D) {
         self.requestType = .checkIn
+        self.latitude = coordinate.latitude
+        self.longitude = coordinate.longitude
     }
     
     init(caughtUserId: String, radiusInMeters: Int) {
         self.caughtUserId = caughtUserId
         self.radiusInMeters = radiusInMeters
+        self.requestType = .Catch
     }
     
    
@@ -81,13 +83,10 @@ class User : NetworkModel {
     // Always return HTTP.GET
     func method() -> Alamofire.HTTPMethod {
         switch requestType {
-        case .checkIn:
-            return .post
-        case .Catch:
-            return .post
-        // Step 17: add default
-        default:
+        case .nearby, .caught:
             return .get
+        default:
+            return .post
         }
     }
     

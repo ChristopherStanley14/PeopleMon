@@ -16,6 +16,7 @@ struct Constants {
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
     public static let apiKey = "iOSandroid301november2016"
+    static let radiusInMeters = 100
     
 
     
@@ -52,5 +53,13 @@ struct Constants {
         static let created = "Created"
         static let caughtUserId = "CaughtUserId"
         static let radiusInMeters = "radiusInMeters"
+    }
+    
+    enum Images : String {
+        case Avatar
+        
+        func image() -> UIImage {
+            return UIImage(named: self.rawValue)!
+        }
     }
 }

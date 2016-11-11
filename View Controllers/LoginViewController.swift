@@ -42,13 +42,13 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         guard let email = usernameTextField.text, email != "" else {
             // show error
-            let alert = Utils.createAlert("Login Error", message: "Please provide a username", dismissButtonTitle: "Close")
+            let alert = Utils.createAlert(title: "Login Error", message: "Please provide a username", dismissButtonTitle: "Close")
             present(alert, animated: true, completion: nil)
             return
         }
         
         guard let password = passwordTextField.text, password != "" else {
-            present(Utils.createAlert("Login Error", message: "Please provide a password"), animated: true, completion: nil)
+            present(Utils.createAlert(title: "Login Error", message: "Please provide a password"), animated: true, completion: nil)
             return
         }
         

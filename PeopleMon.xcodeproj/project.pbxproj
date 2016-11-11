@@ -11,6 +11,9 @@
 		B93AF20C1DD2C84300461E79 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AF20B1DD2C84300461E79 /* MapPin.swift */; };
 		B93AF20E1DD39C4500461E79 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AF20D1DD39C4500461E79 /* UserProfileViewController.swift */; };
 		B93AF2121DD3A11400461E79 /* CaughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AF2111DD3A11400461E79 /* CaughtTableViewController.swift */; };
+		B9895E951DD5436B00D7B06D /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895E941DD5436B00D7B06D /* Segue.swift */; };
+		B9895E971DD5449D00D7B06D /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895E961DD5449D00D7B06D /* PersonCell.swift */; };
+		B9895E991DD5508100D7B06D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895E981DD5508100D7B06D /* Image.swift */; };
 		B99034241DD0D468007FF1C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034231DD0D468007FF1C4 /* User.swift */; };
 		B99034291DD0D549007FF1C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034261DD0D549007FF1C4 /* Constants.swift */; };
 		B990342A1DD0D549007FF1C4 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034271DD0D549007FF1C4 /* UserStore.swift */; };
@@ -37,6 +40,9 @@
 		B93AF20B1DD2C84300461E79 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		B93AF20D1DD39C4500461E79 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = "View Controllers/UserProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B93AF2111DD3A11400461E79 /* CaughtTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaughtTableViewController.swift; path = "View Controllers/CaughtTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B9895E941DD5436B00D7B06D /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		B9895E961DD5449D00D7B06D /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		B9895E981DD5508100D7B06D /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B99034231DD0D468007FF1C4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = SOURCE_ROOT; };
 		B99034261DD0D549007FF1C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Components/Constants.swift; sourceTree = SOURCE_ROOT; };
 		B99034271DD0D549007FF1C4 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Components/UserStore.swift; sourceTree = SOURCE_ROOT; };
@@ -142,6 +148,9 @@
 				B9DD2B9C1DD0CA7300CB7E24 /* LaunchScreen.storyboard */,
 				B9DD2B9F1DD0CA7300CB7E24 /* Info.plist */,
 				B93AF20B1DD2C84300461E79 /* MapPin.swift */,
+				B9895E941DD5436B00D7B06D /* Segue.swift */,
+				B9895E961DD5449D00D7B06D /* PersonCell.swift */,
+				B9895E981DD5508100D7B06D /* Image.swift */,
 			);
 			path = PeopleMon;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B99034301DD0D5B0007FF1C4 /* NetworkModel.swift in Sources */,
+				B9895E991DD5508100D7B06D /* Image.swift in Sources */,
 				B99034351DD250AD007FF1C4 /* Account.swift in Sources */,
 				B990342A1DD0D549007FF1C4 /* UserStore.swift in Sources */,
 				B93AF2121DD3A11400461E79 /* CaughtTableViewController.swift in Sources */,
@@ -324,6 +334,8 @@
 				B9DD2B941DD0CA7300CB7E24 /* AppDelegate.swift in Sources */,
 				B99034321DD0D5B0007FF1C4 /* WebServicesExtension.swift in Sources */,
 				B99034311DD0D5B0007FF1C4 /* WebServices.swift in Sources */,
+				B9895E971DD5449D00D7B06D /* PersonCell.swift in Sources */,
+				B9895E951DD5436B00D7B06D /* Segue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

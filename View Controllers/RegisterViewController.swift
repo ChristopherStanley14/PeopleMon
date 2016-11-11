@@ -45,24 +45,24 @@ class RegisterViewController: UIViewController {
         // Validate user input
         guard let fullName = usernameTextField.text, fullName != "" else {
             // show error
-            let alert = Utils.createAlert("Login Error", message: "Please provide your full name", dismissButtonTitle: "Close")
+            let alert = Utils.createAlert(title: "Login Error", message: "Please provide your full name", dismissButtonTitle: "Close")
             present(alert, animated: true, completion: nil)
             return
         }
         
-        guard let email = emailTextField.text, email != "" && Utils.isValidEmail(email)
+        guard let email = emailTextField.text, email != "" && Utils.isValidEmail(testStr: email)
             else {
-                present(Utils.createAlert("Login Error", message: "Please provide a valid email address"), animated: true, completion: nil)
+                present(Utils.createAlert(title: "Login Error", message: "Please provide a valid email address"), animated: true, completion: nil)
                 return
         }
         
         guard let password = passwordTextField.text, password != "" else {
-            present(Utils.createAlert("Login Error", message: "Please provide a password"), animated: true, completion: nil)
+            present(Utils.createAlert(title: "Login Error", message: "Please provide a password"), animated: true, completion: nil)
             return
         }
         
         guard let confirm = confirmPasswordTextField.text, password == confirm else {
-            present(Utils.createAlert("Login Error", message: "Passwords do not match"), animated: true, completion: nil)
+            present(Utils.createAlert(title: "Login Error", message: "Passwords do not match"), animated: true, completion: nil)
             return
         }
         
