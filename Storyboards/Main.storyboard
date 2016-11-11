@@ -96,18 +96,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcM-G5-0Cc">
-                                            <rect key="frame" x="307" y="29" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatar" destination="rqo-Zs-OzA" id="7bo-Lv-uL2"/>
-                                    <outlet property="dateLabel" destination="qcM-G5-0Cc" id="j1i-V2-3QE"/>
                                     <outlet property="nameLabel" destination="7Rb-AE-LJm" id="qIX-ze-7ic"/>
                                 </connections>
                             </tableViewCell>
@@ -162,22 +154,34 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Profile" id="CPp-f0-tSX">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="cGc-jc-63x">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="cGc-jc-63x">
                                             <connections>
-                                                <action selector="back:" destination="E2w-Ef-EPN" id="a6s-sn-oXY"/>
+                                                <action selector="save:" destination="E2w-Ef-EPN" id="CvK-km-voE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="vqz-NK-c8G">
+                                            <connections>
+                                                <action selector="cameraClicked:" destination="E2w-Ef-EPN" id="Xey-os-Dsk"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lA7-Ey-ON8">
-                                <rect key="frame" x="147" y="84" width="80" height="80"/>
+                                <rect key="frame" x="136" y="191" width="102" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXE-ah-hdD">
-                                <rect key="frame" x="122" y="172" width="130" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="el9-h7-o4M">
+                                <rect key="frame" x="113" y="299" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEa-oP-khS">
+                                <rect key="frame" x="136" y="111" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -186,12 +190,47 @@
                     </view>
                     <connections>
                         <outlet property="avatar" destination="lA7-Ey-ON8" id="EKy-ps-z86"/>
-                        <outlet property="userNameLabel" destination="bXE-ah-hdD" id="Roe-tB-Cpj"/>
+                        <outlet property="currentNameLabel" destination="HEa-oP-khS" id="cP0-t4-JjF"/>
+                        <outlet property="userName" destination="el9-h7-o4M" id="uzH-Ef-Hzi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0t2-aU-BNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1500" y="130.88455772113943"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="8qx-7E-VY2">
+            <objects>
+                <viewController id="OrY-OO-wdN" customClass="ImageViewController" customModule="PeopleMon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VVi-U6-xqx"/>
+                        <viewControllerLayoutGuide type="bottom" id="L68-0j-mzW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OF9-Vz-604">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mdP-ph-A8l">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UFL-Xn-ZUj">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="qmy-2L-8ba">
+                            <connections>
+                                <action selector="close:" destination="OrY-OO-wdN" id="7qX-kS-OOt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="mdP-ph-A8l" id="K1L-qo-1Pa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pf4-e4-jHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="131"/>
         </scene>
         <!--Login-->
         <scene sceneID="rt6-MI-BrK">
@@ -218,6 +257,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tq5-Ry-q18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="131"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="82g-hI-PNc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fie-RO-fNe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iJF-Ep-dkY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OrY-OO-wdN" kind="relationship" relationship="rootViewController" id="mlJ-J5-IFW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zne-VZ-sTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="-573"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

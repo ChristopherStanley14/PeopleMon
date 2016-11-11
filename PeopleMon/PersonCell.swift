@@ -26,17 +26,13 @@ class PersonCell: UITableViewCell {
         self.person = person
         
         nameLabel.text = person.userName
-        if let createdDate = person.created {
-            let date = Date(fromString: createdDate, format: .iso8601(nil))
-            dateLabel.text = date.toString(.custom("M/d/yyyy h:m:s a"))
-        }
+      
         
-//        if let image = Utils.imageFromString(imageString: person.avatarBase64) {
-//            avatar.image = image
-//        } else {
-//            avatar.image = Images.Avatar.image()
-//        }
-//        avatar.setupView(size: 60)
+        if let image = Utils.imageFromString(imageString: person.avatarBase64) {
+            avatar.image = image
+        } else {
+            avatar.image = UIImage(named: "default-user-icon-profile")
+        }
     }
 }
 

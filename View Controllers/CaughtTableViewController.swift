@@ -38,11 +38,17 @@ class CaughtTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PersonCell.self)) as! PersonCell
-        
-        let person = caught[indexPath.row]
-        cell.setupCell(person: person)
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? PersonCell {
+            
+            let person = caught[indexPath.row]
+            cell.setupCell(person: person)
+            
+            return cell
+        } else {
+            print("Error")
+            return UITableViewCell()
+            
+            
+        }
     }
 }

@@ -45,7 +45,9 @@ class User : NetworkModel {
     
     
     // empty constructor
-    required init() {}
+    required init() {
+    requestType = .caught
+    }
     
     // create an object from JSON
     required init(json: JSON) throws {

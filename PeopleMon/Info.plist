@@ -55,5 +55,9 @@
 	<string>This app will determine your location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app will determine your location</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs to access your Camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs to access your Photo Library</string>
 </dict>
 </plist>

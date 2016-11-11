@@ -60,12 +60,12 @@ class Account : NetworkModel {
         expiration = try? json.getString(at: Constants.Account.expiration)
         hasRegistered = try? json.getBool(at: Constants.Account.hasRegistered)
         loginProvider = try? json.getString(at: Constants.Account.loginProvider)
+        fullName = try? json.getString(at: Constants.Account.fullName)
         email = try? json.getString(at: Constants.Account.email)
         password = try? json.getString(at: Constants.Account.password)
         avatarBase64 = try? json.getString(at: Constants.Account.avatarBase64)
         lastCheckedInLatitude = try? json.getDouble(at: Constants.Account.lastCheckInLatitude)
         lastCheckedInLongitude = try? json.getDouble(at: Constants.Account.lastCheckInLongitude)
-        fullName = try? json.getString(at: Constants.Account.fullName)
 
     }
     

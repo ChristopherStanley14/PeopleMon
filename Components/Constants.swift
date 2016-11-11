@@ -17,6 +17,8 @@ struct Constants {
     public static let authToken = "authToken"
     public static let apiKey = "iOSandroid301november2016"
     static let radiusInMeters = 100
+    static let serverImageSize: CGFloat = 80
+    static let avatarSize: CGFloat = 120
     
 
     

@@ -14,7 +14,7 @@ class Utils {
         return emailTest.evaluate(with: testStr)
     }
     
-    class func resizeImage(image: UIImage) -> UIImage {
+    class func resizeImage(image: UIImage, maxSize: CGFloat) -> UIImage {
         let maxSize: CGFloat = 80
         let newSize: CGSize!
         if image.size.width > image.size.height {
@@ -35,12 +35,12 @@ class Utils {
         return newImage
     }
     
-//    class func imageFromString(imageString: String?) -> UIImage? {
-//        if let imageString = imageString, let imageData = Data(base64Encoded: imageString, options: .ignoreUnknownCharacters) {
-//            return UIImage(data: imageData as Data)
-//        }
-//        return Images.Avatar.image()
-//    }
+    class func imageFromString(imageString: String?) -> UIImage? {
+        if let imageString = imageString, let imageData = Data(base64Encoded: imageString, options: .ignoreUnknownCharacters) {
+            return UIImage(data: imageData as Data)
+        }
+        return UIImage(named: "default-user-icon-profile")
+    }
     
     class func stringFromImage(image: UIImage?) -> String {
         if let image = image, let imageData = UIImagePNGRepresentation(image) {

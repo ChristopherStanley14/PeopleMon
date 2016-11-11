@@ -6,6 +6,7 @@
 //  Copyright © 2016 Christopher Stanley. All rights reserved.
 //
 import Foundation
+import UIKit
 
 protocol UserStoreDelegate: class {
     func userLoggedIn()
@@ -15,6 +16,7 @@ class UserStore {
     // singleton
     static let shared = UserStore()
     private init() {}
+    var selectedImage: UIImage?
     
     var user: Account? {
         didSet {
