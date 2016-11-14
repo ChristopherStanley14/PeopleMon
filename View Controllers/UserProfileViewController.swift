@@ -11,7 +11,7 @@ import MBProgressHUD
 
 class UserProfileViewController: UIViewController {
     
-    @IBOutlet weak var currentNameLabel: UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var userName: UITextField!
     
@@ -21,7 +21,7 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         
         if let user = UserStore.shared.user {
-            currentNameLabel.text = user.fullName
+            fullNameLabel.text = user.fullName
             
             if Utils.imageFromString(imageString: user.avatarBase64) != nil {
                 avatar.image = Utils.imageFromString(imageString: user.avatarBase64)
@@ -30,6 +30,8 @@ class UserProfileViewController: UIViewController {
             }
             // Do any additional setup after loading the view.
         }
+    
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,14 +82,13 @@ class UserProfileViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func save(_ sender: Any) {
+    @IBAction func save(_ sender: AnyObject) {
         let name = userName.text
         
         let resizedImage = Utils.resizeImage(image: avatar.image!, maxSize: Constants.avatarSize)
         let imageString = Utils.stringFromImage(image: resizedImage)
         
         let user = Account(fullName: name!, avatarBase64: imageString)
-        
         MBProgressHUD.showAdded(to: view, animated: true)
         WebServices.shared.postObject(user) { (updatedUser, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
@@ -96,10 +97,13 @@ class UserProfileViewController: UIViewController {
             } else {
                 UserStore.shared.user?.fullName = name
                 UserStore.shared.user?.avatarBase64 = imageString
+                self.dismiss(animated: true, completion: nil)
+
             }
         }
     }
-}
+    }
+    
 
 
 

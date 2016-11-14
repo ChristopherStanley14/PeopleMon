@@ -21,8 +21,6 @@ extension WebServices {
         }
     }
     
-    
-    
     func getObjects<T: NetworkModel>(_ model: T, completion: @escaping (_ objects: [T]?, _ error: String?) -> Void) {
         request(AuthRouter.restRequest(model)).responseJSON { (response) in
             WebServices.parseResponseObjects(response: response, completion: completion)

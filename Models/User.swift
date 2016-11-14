@@ -30,6 +30,7 @@ class User : NetworkModel {
     var radiusInMeters : Int?
     var caughtUserId : String?
     var created : String?
+    var distance : Double?
     
     
     // Request Type
@@ -77,7 +78,10 @@ class User : NetworkModel {
         self.requestType = .Catch
     }
     
-   
+    init(userID: String, radiusInMeters: Int) {
+        self.userId = userID
+        self.radiusInMeters = radiusInMeters
+    }
     
     
     

@@ -10,13 +10,9 @@ import UIKit
 import AFDateHelper
 
 class PersonCell: UITableViewCell {
-//    @IBOutlet weak var avatar: CircleImage!
-//    @IBOutlet weak var nameLabel: UILabel!
-//    @IBOutlet weak var dateLabel: UILabel!
-    
+
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     
     
     

@@ -19,6 +19,8 @@ struct Constants {
     static let radiusInMeters = 100
     static let serverImageSize: CGFloat = 80
     static let avatarSize: CGFloat = 120
+    static let pinImageSize: CGFloat = 16
+    static let nearbyRadius: CGFloat = 400
     
 
     
@@ -57,11 +59,11 @@ struct Constants {
         static let radiusInMeters = "radiusInMeters"
     }
     
-    enum Images : String {
-        case Avatar
-        
-        func image() -> UIImage {
-            return UIImage(named: self.rawValue)!
-        }
-    }
+//    enum Images : String {
+//        case Avatar
+//        
+//        func image() -> UIImage {
+//            return UIImage(named: self.rawValue)!
+//        }
+//    }
 }

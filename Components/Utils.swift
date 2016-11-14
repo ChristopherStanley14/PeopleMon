@@ -15,7 +15,7 @@ class Utils {
     }
     
     class func resizeImage(image: UIImage, maxSize: CGFloat) -> UIImage {
-        let maxSize: CGFloat = 80
+        let maxSize: CGFloat = 10
         let newSize: CGSize!
         if image.size.width > image.size.height {
             newSize = CGSize(width: maxSize, height: maxSize * (image.size.height / image.size.width))

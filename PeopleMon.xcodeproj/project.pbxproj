@@ -14,6 +14,7 @@
 		B9895E951DD5436B00D7B06D /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895E941DD5436B00D7B06D /* Segue.swift */; };
 		B9895E971DD5449D00D7B06D /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895E961DD5449D00D7B06D /* PersonCell.swift */; };
 		B9895E9D1DD61DE200D7B06D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895E9C1DD61DE200D7B06D /* ImageViewController.swift */; };
+		B9895EA31DD948B700D7B06D /* ImageSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9895EA21DD948B700D7B06D /* ImageSetup.swift */; };
 		B99034241DD0D468007FF1C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034231DD0D468007FF1C4 /* User.swift */; };
 		B99034291DD0D549007FF1C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034261DD0D549007FF1C4 /* Constants.swift */; };
 		B990342A1DD0D549007FF1C4 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99034271DD0D549007FF1C4 /* UserStore.swift */; };
@@ -43,6 +44,7 @@
 		B9895E941DD5436B00D7B06D /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		B9895E961DD5449D00D7B06D /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		B9895E9C1DD61DE200D7B06D /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewController.swift; path = "View Controllers/ImageViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B9895EA21DD948B700D7B06D /* ImageSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSetup.swift; sourceTree = "<group>"; };
 		B99034231DD0D468007FF1C4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = SOURCE_ROOT; };
 		B99034261DD0D549007FF1C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Components/Constants.swift; sourceTree = SOURCE_ROOT; };
 		B99034271DD0D549007FF1C4 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Components/UserStore.swift; sourceTree = SOURCE_ROOT; };
@@ -150,6 +152,7 @@
 				B93AF20B1DD2C84300461E79 /* MapPin.swift */,
 				B9895E941DD5436B00D7B06D /* Segue.swift */,
 				B9895E961DD5449D00D7B06D /* PersonCell.swift */,
+				B9895EA21DD948B700D7B06D /* ImageSetup.swift */,
 			);
 			path = PeopleMon;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				B99034291DD0D549007FF1C4 /* Constants.swift in Sources */,
 				B99034241DD0D468007FF1C4 /* User.swift in Sources */,
 				B93AF20C1DD2C84300461E79 /* MapPin.swift in Sources */,
+				B9895EA31DD948B700D7B06D /* ImageSetup.swift in Sources */,
 				B990342B1DD0D549007FF1C4 /* Utils.swift in Sources */,
 				B9DD2BB01DD0D0CB00CB7E24 /* RegisterViewController.swift in Sources */,
 				B990343B1DD271EA007FF1C4 /* MapViewController.swift in Sources */,

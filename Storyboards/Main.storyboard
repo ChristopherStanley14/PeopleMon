@@ -26,6 +26,23 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="587"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vP-G4-Frd">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Nearby" id="dXC-WL-dog">
+                                        <connections>
+                                            <action selector="nearby:" destination="gWb-6q-mrS" id="39g-pY-7oX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HS7-0t-sCQ"/>
+                                    <barButtonItem title="Close Nearby" id="Vbr-9u-ucx">
+                                        <connections>
+                                            <action selector="closeNearby:" destination="gWb-6q-mrS" id="AK5-ci-2H3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +207,7 @@
                     </view>
                     <connections>
                         <outlet property="avatar" destination="lA7-Ey-ON8" id="EKy-ps-z86"/>
-                        <outlet property="currentNameLabel" destination="HEa-oP-khS" id="cP0-t4-JjF"/>
+                        <outlet property="fullNameLabel" destination="HEa-oP-khS" id="pb8-a8-fXk"/>
                         <outlet property="userName" destination="el9-h7-o4M" id="uzH-Ef-Hzi"/>
                     </connections>
                 </viewController>
